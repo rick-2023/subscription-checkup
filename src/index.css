@@ -1,0 +1,466 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@font-face {
+  font-family: 'Noto Serif SC';
+  src: url('./assets/fonts/noto-serif-sc-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Noto Serif SC';
+  src: url('./assets/fonts/noto-serif-sc-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-heading: var(--font-sans);
+  --font-sans: 'Noto Serif SC', 'Songti SC', 'STSong', 'PingFang SC', 'Noto Sans CJK SC', 'Microsoft YaHei', serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --ink: #1a1a1a;
+  --muted-ink: #3f3832;
+  --paper: #fffdf8;
+  --paper-2: #f4efe6;
+  --desk: #cfc9be;
+  --line: #1a1a1a;
+  --press: #000000;
+  --on-ink: #fffdf8;
+  --sum: #b42318;
+  --warn: #9a3412;
+  --warn-bg: #fffdf8;
+  --danger: #9f1239;
+  --danger-bg: #fde8e6;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --text-caption: 13px;
+  --text-secondary: 14px;
+  --text-body: 16px;
+  --text-title: 22px;
+  --text-display: 52px;
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: var(--paper);
+  --card-foreground: var(--ink);
+  --popover: var(--paper);
+  --popover-foreground: var(--ink);
+  --primary: var(--ink);
+  --primary-foreground: var(--on-ink);
+  --secondary: var(--paper-2);
+  --secondary-foreground: var(--ink);
+  --muted: var(--paper-2);
+  --muted-foreground: var(--muted-ink);
+  --accent: var(--paper-2);
+  --accent-foreground: var(--ink);
+  --destructive: var(--danger);
+  --border: var(--line);
+  --input: var(--line);
+  --ring: var(--ink);
+  --chart-1: var(--ink);
+  --chart-2: var(--sum);
+  --chart-3: var(--warn);
+  --chart-4: var(--muted-ink);
+  --chart-5: var(--muted-ink);
+  --radius: 0px;
+  --sidebar: var(--paper);
+  --sidebar-foreground: var(--ink);
+  --sidebar-primary: var(--ink);
+  --sidebar-primary-foreground: var(--on-ink);
+  --sidebar-accent: var(--paper-2);
+  --sidebar-accent-foreground: var(--ink);
+  --sidebar-border: var(--line);
+  --sidebar-ring: var(--ink);
+  color-scheme: light;
+}
+
+.dark {
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: var(--paper);
+  --card-foreground: var(--ink);
+  --popover: var(--paper);
+  --popover-foreground: var(--ink);
+  --primary: var(--ink);
+  --primary-foreground: var(--on-ink);
+  --secondary: var(--paper-2);
+  --secondary-foreground: var(--ink);
+  --muted: var(--paper-2);
+  --muted-foreground: var(--muted-ink);
+  --accent: var(--paper-2);
+  --accent-foreground: var(--ink);
+  --destructive: var(--danger);
+  --border: var(--line);
+  --input: var(--line);
+  --ring: var(--ink);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    color-scheme: light;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply text-foreground;
+    margin: 0;
+    min-height: 100dvh;
+    background: var(--desk);
+  }
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+.desk {
+  min-height: 100dvh;
+  background: var(--desk);
+  padding: 12px 12px 20px;
+}
+
+.sheet {
+  --pad-x: 22px;
+  --pad-top: calc(28px + env(safe-area-inset-top));
+  --pad-bottom: calc(36px + env(safe-area-inset-bottom));
+  width: 100%;
+  max-width: 400px;
+  margin-inline: auto;
+  min-height: calc(100vh - 32px);
+  min-height: calc(100dvh - 32px);
+  position: relative;
+  background: var(--paper);
+  background-image: none;
+  color: var(--ink);
+  padding: var(--pad-top) var(--pad-x) var(--pad-bottom);
+  box-shadow: 0 10px 28px rgba(48, 40, 32, 0.14);
+  line-break: strict;
+  word-break: keep-all;
+  text-wrap: pretty;
+}
+
+.sheet :where(.border-t, .border-b, .border-x) {
+  border-style: dashed;
+  border-color: var(--ink);
+}
+
+.kicker {
+  margin: 0;
+  color: var(--ink);
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+}
+
+.display {
+  margin: 16px 0 0;
+  font-size: 44px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.16;
+}
+
+.lede {
+  margin: 12px 0 0;
+  max-width: 16em;
+  padding-bottom: 18px;
+  border-bottom: 1px dashed var(--ink);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.seal {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 8px;
+  border: 1px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.seal-demo {
+  border-color: var(--warn);
+  color: var(--warn);
+}
+
+.ledger {
+  margin: 4px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ledger li,
+.file-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px dashed var(--ink);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.file-btn,
+.pick-btn {
+  position: relative;
+  display: flex;
+  min-height: 48px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-bottom: 1px dashed var(--ink);
+  background: transparent;
+  padding: 0 var(--space-4);
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 600;
+  transition: transform 80ms linear, background-color 80ms linear;
+}
+
+.file-btn {
+  margin-top: 22px;
+  border: 0;
+  background: var(--ink);
+  color: var(--on-ink);
+  font-family: 'PingFang SC', 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;
+}
+
+.file-btn:active,
+.pick-btn:active,
+[data-slot='button']:active {
+  transform: scale(0.98);
+}
+
+.file-btn:focus-within,
+.pick-btn:focus-within,
+[data-slot='button']:focus-visible,
+.tap:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+[data-slot='button'],
+.pick-btn {
+  font-family: 'PingFang SC', 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;
+}
+
+.note-info,
+.note-warn,
+.note-danger {
+  padding: 12px 0;
+  font-size: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.note-info {
+  color: var(--ink);
+  border-top: 1px dashed var(--ink);
+  border-bottom: 1px dashed var(--ink);
+}
+
+.note-warn {
+  margin: 0;
+  padding: 12px 0;
+  background: var(--paper);
+  background-image: none;
+  color: var(--warn);
+  border-top: 1px dashed var(--ink);
+  border-bottom: 1px dashed var(--ink);
+}
+
+.note-danger {
+  margin: 0;
+  padding: 12px 0;
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+.amount {
+  margin: 0;
+  padding: 2px 0 6px;
+  background: var(--paper);
+  background-image: none;
+  color: var(--sum);
+  font-size: 44px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.15;
+  font-variant-numeric: tabular-nums;
+}
+
+.bar-track {
+  margin-top: 6px;
+  height: 2px;
+  background: var(--line);
+}
+
+.bar-fill {
+  height: 2px;
+  background: var(--ink);
+}
+
+.sub-card {
+  padding: 16px 0;
+  border-top: 1px dashed var(--ink);
+  background: transparent;
+  background-image: none;
+}
+
+.sub-card[data-risk='check'] .meta-warn,
+.sub-card[data-risk='check'] h2 {
+  color: var(--warn);
+}
+
+[data-slot='badge'] {
+  border-radius: 0;
+  font-size: 13px;
+}
+
+.chip-ok,
+.chip-mid,
+.chip-pending {
+  background: transparent;
+  color: var(--muted-ink);
+}
+
+.chip-ok {
+  color: var(--ink);
+}
+
+.chip-mid,
+.sub-card[data-risk='check'] .meta-warn {
+  color: var(--warn);
+}
+
+.tap {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.break-anywhere {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+button,
+a,
+label,
+[role='button'] {
+  touch-action: manipulation;
+}
+
+.view-in {
+  animation: ledger-in 280ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.intro > * {
+  animation: ledger-in 320ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.intro > *:nth-child(2) { animation-delay: 50ms; }
+.intro > *:nth-child(3) { animation-delay: 100ms; }
+.intro > *:nth-child(4) { animation-delay: 150ms; }
+.intro > *:nth-child(n + 5) { animation-delay: 200ms; }
+
+@keyframes ledger-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (min-width: 840px) {
+  .desk {
+    padding: 56px 24px 72px;
+  }
+  .sheet {
+    max-width: 420px;
+    min-height: auto;
+    padding-top: 36px;
+    padding-bottom: 48px;
+  }
+  .amount {
+    font-size: 52px;
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "jobId": "import_c4d54bfc-b27b-4f97-8751-ad10b9ad676d",
+  "status": "FAILED",
+  "stage": "FAILED",
+  "message": "源代码未通过导入校验，请修复后重新导入",
+  "diagnostic": "> tsc --noEmit\n\nsrc/components/ui/pagination.tsx(5,10): error TS2305: Module '\"@/components/ui/button\"' has no exported member 'ButtonProps'.\nsrc/components/ui/pagination.tsx(55,5): error TS2783: 'size' is specified more than once, so this usage will be overwritten.\nsrc/components/ui/pagination.tsx(68,5): error TS2783: 'size' is specified more than once, so this usage will be overwritten.\n\nerror: Failed to execute typecheck: Custom script execution failed with exit code: 1\nFull logs saved to: /tmp/utoo-1792819283.log\n\n> tsc --noEmit\n\nsrc/components/ui/pagination.tsx(5,10): error TS2305: Module '\"@/components/ui/button\"' has no exported member 'ButtonProps'.\nsrc/components/ui/pagination.tsx(55,5): error TS2783: 'size' is specified more than once, so this usage will be overwritten.\nsrc/components/ui/pagination.tsx(68,5): error TS2783: 'size' is specified more than once, so this usage will be overwritten.\n\nerror: Failed to execute typecheck: Custom script execution failed with exit code: 1\nFull logs saved to: /tmp/utoo-1792819283.log\n\nExecError: Command failed with exit code 1: error: Failed to execute typecheck: Custom script execution failed with exit code: 1\nFull logs saved to: /tmp/utoo-1792819283.log\n\nCaused by: ExecError: Command failed with exit code 1: error: Failed to execute typecheck: Custom script execution failed with exit code: 1\nFull logs saved to: /tmp/utoo-1792819283.log\n",
+  "failureDiagnostic": {
+    "version": 1,
+    "category": "SOURCE_CODE",
+    "stage": "VALIDATING",
+    "code": "APP_IMPORT_TYPECHECK_FAILED",
+    "summary": "Module '\"@/components/ui/button\"' has no exported member 'ButtonProps'.",
+    "fixableByModel": true,
+    "suggestedAction": "FIX_SOURCE_AND_RETRY",
+    "items": [
+      {
+        "file": "src/components/ui/pagination.tsx",
+        "line": 5,
+        "column": 10,
+        "code": "TS2305",
+        "message": "Module '\"@/components/ui/button\"' has no exported member 'ButtonProps'."
+      },
+      {
+        "file": "src/components/ui/pagination.tsx",
+        "line": 55,
+        "column": 5,
+        "code": "TS2783",
+        "message": "'size' is specified more than once, so this usage will be overwritten."
+      },
+      {
+        "file": "src/components/ui/pagination.tsx",
+        "line": 68,
+        "column": 5,
+        "code": "TS2783",
+        "message": "'size' is specified more than once, so this usage will be overwritten."
+      },
+      {
+        "file": "src/components/ui/pagination.tsx",
+        "line": 5,
+        "column": 10,
+        "code": "TS2305",
+        "message": "Module '\"@/components/ui/button\"' has no exported member 'ButtonProps'."
+      },
+      {
+        "file": "src/components/ui/pagination.tsx",
+        "line": 55,
+        "column": 5,
+        "code": "TS2783",
+        "message": "'size' is specified more than once, so this usage will be overwritten."
+      },
+      {
+        "file": "src/components/ui/pagination.tsx",
+        "line": 68,
+        "column": 5,
+        "code": "TS2783",
+        "message": "'size' is specified more than once, so this usage will be overwritten."
+      },
+      {
+        "message": "> tsc --noEmit"
+      },
+      {
+        "message": "error: Failed to execute typecheck: Custom script execution failed with exit code: 1"
+      },
+      {
+        "message": "Full logs saved to: /tmp/utoo-1792819283.log"
+      },
+      {
+        "message": "> tsc --noEmit"
+      },
+      {
+        "message": "error: Failed to execute typecheck: Custom script execution failed with exit code: 1"
+      },
+      {
+        "message": "Full logs saved to: /tmp/utoo-1792819283.log"
+      },
+      {
+        "message": "ExecError: Command failed with exit code 1: error: Failed to execute typecheck: Custom script execution failed with exit code: 1"
+      },
+      {
+        "message": "Full logs saved to: /tmp/utoo-1792819283.log"
+      },
+      {
+        "message": "Caused by: ExecError: Command failed with exit code 1: error: Failed to execute typecheck: Custom script execution failed with exit code: 1"
+      },
+      {
+        "message": "Full logs saved to: /tmp/utoo-1792819283.log"
+      }
+    ]
+  },
+  "retryCommand": null,
+  "retryAdvice": "当前任务没有可确认的原应用绑定。请先核对任务是否已创建应用，并恢复对应环境的项目绑定；直接重新 import 可能创建新应用。",
+  "environment": "prod",
+  "generatedAt": "2026-10-24T05:21:25.411Z"
+}

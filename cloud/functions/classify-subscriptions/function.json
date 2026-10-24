@@ -1,0 +1,8 @@
+{
+  "name": "classify-subscriptions",
+  "runtime": "node20",
+  "entry": "index.mjs",
+  "description": "对脱敏后的商户汇总做服务分类。模型密钥只从环境变量 LLM_API_KEY 读取，不放进前端。",
+  "secrets": ["LLM_API_KEY"],
+  "env": ["LLM_BASE_URL", "LLM_MODEL"]
+}
