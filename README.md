@@ -20,7 +20,11 @@
 | 可选 AI | `cloud/functions/classify-subscriptions`（OpenAI 兼容 API，密钥仅服务端） |
 | 部署 | [QMuse CLI](https://docs.qmuse.cn/docs/qmuse-cli/)（`qmuse import .`） |
 
-推送到 GitHub 后，仓库默认首页即本 README；线上演示地址请在仓库 **About** 中填写 QMuse 发布链接（或 GitHub Pages 地址，若你单独配置了静态托管）。
+推送到 GitHub 后，仓库默认首页即本 README。
+
+**线上演示（QMuse 公开页）：** <https://render.qmuse.pub/app/2745871971364335>
+
+等价静态产物地址：<https://render.qmuse.pub/p/muse/2745871971364335/index.html>
 
 ## 本地运行
 
@@ -75,6 +79,8 @@ LLM_API_KEY='你的密钥' LLM_BASE_URL='https://api.deepseek.com/v1' LLM_MODEL=
 `npm run dev` 会把同一个函数挂到 `/api/classify`。没配密钥时，按钮会提示未配置，报告仍是规则结果。AI 改过的名称、分类、合并和闲置提示会单独标注。
 
 ## 部署到 QMuse
+
+公开演示：<https://render.qmuse.pub/app/2745871971364335>
 
 文档：<https://docs.qmuse.cn/docs/qmuse-cli/>
 
